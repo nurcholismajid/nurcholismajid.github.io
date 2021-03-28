@@ -1,0 +1,27 @@
+.navbar { padding: 5px 100px; background-color: black;}
+.nav-item { margin-left: 20px; }
+.nav-item a {
+    font-family: 'Staatliches', cursive; 
+    font-size: 18px;
+    font-weight: normal;
+}
+.navbar-brand { 
+    font-family: 'Staatliches', cursive;
+    font-size: 1.5rem;
+    margin-right: 40px;
+}
+.carousel-item { 
+    width: 100%;
+    height: 60vh;
+}
+.d-block { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    filter: brightness(45%);
+}
+.row {
+    margin: 20px 100px;
+    justify-content: center;
+}
