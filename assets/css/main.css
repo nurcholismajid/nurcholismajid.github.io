@@ -25,3 +25,21 @@
     margin: 20px 100px;
     justify-content: center;
 }
+
+@media screen and (max-width: 600px) {
+    .navbar { 
+        padding: 0;
+        margin: 0;
+    }
+    .row {
+        margin: 20px 0;
+    }
+    .col-sm-4 {
+        margin-bottom: 10px;
+    }
+    .card {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+}
