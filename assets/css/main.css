@@ -1,22 +1,44 @@
-.navbar { padding: 5px 100px; background-color: black;}
-.nav-item { margin-left: 20px; }
-.nav-item a {
-    font-family: 'Staatliches', cursive; 
-    font-size: 17px;
-    font-weight: normal;
+/* Navbar Setting */
+.navbar { padding: 20px 120px; }
+.navbar-nav { margin-left: auto;}
+.navbar a { font-family: 'Staatliches', cursive; }
+
+a.nav-link { 
+    font-size: 1.1em;
+    margin-left: 20px;
 }
-.navbar-brand { 
-    font-family: 'Staatliches', cursive;
-    font-size: 1.5rem;
-    margin-right: 40px;
+a.navbar-brand { 
+    font-size: 1.6rem;
+    letter-spacing: 2px;
 }
-.carousel-item { 
+
+/* Page Header Setting */
+.page-header {
+    height: 70vh;
     width: 100%;
-    height: 60vh;
 }
+.page-header video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.page-header:after {
+    background-image: url("../image/grainy.jpg"); /* add texture in here */
+    content: "";
+    height: 171%;
+    left: -50%;
+    position: absolute;
+    opacity: 0.1;
+    top: -100%;
+    width: 150%;
+}
+
+/* carousel caption */
 .carousel-caption {
     top: 50%;
     transform: translateY(-50%);
+    z-index: 2;
 }
 .carousel-caption h5 {
     font-size: 4rem;
@@ -24,9 +46,9 @@
 }
 .rm-fill {
     position: absolute;
-    top: 15%;
+    top: 7.2%;
     left: 50.5%;
-    transform: translateY(-15%);
+    transform: translateY(-7.2%);
     transform: translateX(-50.5%);
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px rgb(187, 187, 187);
@@ -35,195 +57,79 @@
 .carousel-caption p {
     font-size: 1.2rem;
 }
-.d-block { 
+
+/* carousel partners */
+.wrapper {
+    position: absolute;
+    top: 140px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
-    filter: brightness(45%);
-}
-.row {
-    margin: 80px 100px 20px 100px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
-.row h1 {
-    text-align: center;
-    padding: 10px;
-    font-family: 'Staatliches', cursive;
-    font-size: 2.2rem;
-}
-.container { margin-top: 20px; }
-.patners { filter: grayscale(100%); }
-.patners:hover {
-    filter: none;
-    transition: 0.5s;
-}
-.row-project { 
-    background-color: black;
-    background-image: url("../img/vin1.webp");
-    background-size: cover;
-    background-position: center center;
-    padding: 20px 100px 50px 100px;
-    margin: 80px 0 20px 0;
-}
-.row-project { justify-content: flex-start; }
-.row-project h1 { color: white; }
-.row-project h5 { font-weight: bold; }
-.row-project h6 { color: #555555; }
-.row-project .col-sm-3 { width: 26%;}
-.row-project .card { border-radius: 10px;}
-.progress {margin-bottom: 10px;}
-.row-project a { 
-    text-decoration: none;
-    font-weight: bold;
-    color: #555555;
-    font-style: italic;
-}
-.card-text-project {
-    font-style: italic;
-    color: #656565;
-}
-/* Slider */
-.slick-slide {
-    margin: 0px 20px;
-}
-
-.slick-slide img {
-    width: 100%;
-}
-
-.slick-slider
-{
+.slider {
+    width: 1000px;
+    height: 100px;
     position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-        user-select: none;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-        touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-    position: relative;
-    display: block;
+    background: white;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+    display: flex;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
 }
-.slick-list:focus
-{
-    outline: none;
+.slide {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    animation: slideshow 40s linear infinite;
 }
-.slick-list.dragging
-{
-    cursor: pointer;
-    cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list
-{
-    -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+.slide img {
+    height: 70px;
+    padding: 0 30px 0 30px;
 }
 
-.slick-track
-{
-    position: relative;
-    top: 0;
+@keyframes slideshow {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+.slider::before, .slider::after {
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    content: "";
+    background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
+}
+.slider::before {
     left: 0;
-    display: block;
+    top: 0;
 }
-.slick-track:before,
-.slick-track:after
-{
-    display: table;
-    content: '';
-}
-.slick-track:after
-{
-    clear: both;
-}
-.slick-loading .slick-track
-{
-    visibility: hidden;
+.slider::after {
+    right:0;
+    top:0;
+    transform: rotateZ(180deg);
 }
 
-.slick-slide
-{
-    display: none;
-    float: left;
-    height: 100%;
-    min-height: 1px;
-}
-[dir='rtl'] .slick-slide
-{
-    float: right;
-}
-.slick-slide img
-{
-    display: block;
-}
-.slick-slide.slick-loading img
-{
-    display: none;
-}
-.slick-slide.dragging img
-{
-    pointer-events: none;
-}
-.slick-initialized .slick-slide
-{
-    display: block;
-}
-.slick-loading .slick-slide
-{
-    visibility: hidden;
-}
-.slick-vertical .slick-slide
-{
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-    display: none;
-}
+/* scrolling menu */
 
-@media screen and (max-width: 600px) {
-    .navbar { 
-        padding: 0;
-        margin: 0;
+/* mobile version */
+@media(max-width: 786px) {
+    .navbar { padding: 20px; }
+    .slider { 
+        width: 100%;
+        height: 90px;
+        box-shadow: none;
     }
-    .row {
-        margin: 20px 0;
+    .slider::before, .slider::after {
+        background: linear-gradient(to right, white 0%, rgba(255,255,255,0) 0%);
     }
-    .col-sm-4 {
-        margin-bottom: 10px;
+  
+    /* menu */
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
     }
-    .card {
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    }
-    .row-project { 
-        flex-direction: column;
-    }
-    .row-project .col-sm-3 { width: 100%;}
-    .row-project h1 { color: black}
-    .row-project { 
-        background-color: transparent;
-        background-image: none;
-        padding: 0;
-        margin: 0 0 20px 0;
-    }
+
 }
